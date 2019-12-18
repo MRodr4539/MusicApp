@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { CardActions, Button, Typography, Slider } from '@material-ui/core';
-
+import { Slider } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 export default class MasterVol extends Component {
     constructor(props){
@@ -27,7 +32,9 @@ export default class MasterVol extends Component {
 
     render() {
         return(
-            <div className='volume-slider'>
+           
+            <Card className='volume-card'>
+               <CardContent>
                 <Typography id='slider' gutterBottom>
                     Volume
                 </Typography>
@@ -42,9 +49,14 @@ export default class MasterVol extends Component {
                     onChange={this.handleChange}
                 />
                 <CardActions>
-        <Button size='small' onClick={()=>this.muteVolume()}>{this.state.mute ? 'Unmute' : 'Mute'}</Button>
+                    <Button size='small' onClick={()=>this.muteVolume()}>
+                    {this.state.mute ? 'Unmute' : 'Mute'}</Button>
                 </CardActions>
-            </div>
+                </CardContent>
+            </Card>
+                
+                
+           
         )
     }
 }

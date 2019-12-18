@@ -1,28 +1,34 @@
 import React from 'react';
 // import { Card, CardContent, Typography, Switch } from '@material-ui/core';
-import { FormControlLabel, FormGroup, Switch } from '@material-ui/core';
+import { FormControlLabel, FormGroup, Switch, } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 
 
 const OnlineMode = props => (
 
-    <div className='Online-Switch'>
+    
+      <Card className='online-switch'>
+        <CardContent>
         <h3>Online Mode</h3>  
-        <p>Is this application connected to the internet?</p>
-      <div classname='on-off'>
-        <FormGroup>
-            <FormControlLabel
-              control={
-                  <Switch
-                      checked={props.onlineState}
-                      onChange={props.onlineFunc}
-                   />}
-                 label='Online'
-            />
+          <p>Is this application connected to the internet?</p>
+        <div classname='on-off'>
+          <FormGroup>
+              <FormControlLabel
+                control={
+                    <Switch
+                        checked={props.onlineState}
+                        onChange={props.onlineFunc}
+                      />}
+                    label='Online'
+              />
 
-        </FormGroup>
-      </div>  
-
-    </div>
+          </FormGroup>
+          </div>  
+        </CardContent>
+      </Card>
+    
 
 
 )
